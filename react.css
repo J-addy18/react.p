@@ -1,0 +1,69 @@
+/* Three-colour palette only:
+   Navy: #0B1F3A
+   White: #FFFFFF
+   Sky blue: #38BDF8
+*/
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  background: #0B1F3A;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #0B1F3A; }
+button, input { font: inherit; }
+.page { min-height: 100vh; padding: 28px 20px 40px; background: #0B1F3A; }
+.container { width: 100%; max-width: 900px; margin: 0 auto; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; font-size: 19px; font-weight: 700; }
+.brand-icon { color: #38BDF8; font-size: 28px; }
+.topbar p { margin: 0; color: #FFFFFF; font-size: 13px; }
+.intro { margin: 64px 0 28px; }
+.tag, .label { margin: 0 0 10px; color: #38BDF8; font-size: 11px; font-weight: 700; letter-spacing: .15em; }
+.intro h1 { margin: 0; color: #FFFFFF; font-size: clamp(36px, 7vw, 58px); line-height: 1.05; letter-spacing: -.04em; }
+.intro-copy { margin: 15px 0 0; color: #FFFFFF; font-size: 15px; }
+.search { display: flex; gap: 10px; margin-bottom: 8px; }
+.search input { flex: 1; min-width: 0; padding: 15px 17px; border: 2px solid #38BDF8; border-radius: 10px; outline: none; color: #0B1F3A; background: #FFFFFF; }
+.search input::placeholder { color: #0B1F3A; }
+.search button { padding: 0 24px; border: 2px solid #38BDF8; border-radius: 10px; color: #0B1F3A; background: #38BDF8; font-weight: 700; cursor: pointer; }
+.search button:hover { color: #FFFFFF; background: #0B1F3A; }
+.error { margin: 10px 2px; color: #38BDF8; font-size: 13px; }
+.current-card { margin-top: 25px; padding: 30px; border: 2px solid #38BDF8; border-radius: 18px; color: #0B1F3A; background: #FFFFFF; }
+.current-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.current-card .label { color: #0B1F3A; }
+.current-card h2 { margin: 0; font-size: 23px; }
+.condition, .feels { margin: 7px 0 0; color: #0B1F3A; }
+.weather-emoji { font-size: 58px; }
+.temperature { margin-top: 20px; color: #0B1F3A; font-size: clamp(70px, 12vw, 100px); font-weight: 700; line-height: 1; }
+.temperature span { margin-left: 5px; color: #38BDF8; font-size: .42em; vertical-align: top; }
+.feels { font-size: 14px; }
+.details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin: 15px 0 38px; }
+.detail { display: flex; align-items: center; gap: 13px; padding: 18px; border: 2px solid #38BDF8; border-radius: 14px; background: #0B1F3A; }
+.detail-icon { font-size: 25px; }
+.detail p { margin: 0 0 5px; color: #FFFFFF; font-size: 12px; }
+.detail strong { color: #38BDF8; font-size: 18px; }
+.section-heading { margin-bottom: 14px; }
+.section-heading h2 { margin: 0; color: #FFFFFF; font-size: 25px; }
+.forecast { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.forecast-day { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 17px 8px; border: 2px solid #38BDF8; border-radius: 14px; color: #FFFFFF; background: #0B1F3A; }
+.forecast-day.today { color: #0B1F3A; background: #38BDF8; }
+.forecast-day p { margin: 0; font-size: 13px; }
+.forecast-day span { font-size: 30px; }
+.forecast-day strong { font-size: 20px; }
+footer { margin-top: 38px; color: #FFFFFF; text-align: center; font-size: 12px; }
+footer span { color: #38BDF8; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 650px) {
+  .page { padding: 22px 14px 32px; }
+  .intro { margin-top: 48px; }
+  .details { grid-template-columns: 1fr; }
+  .forecast { grid-template-columns: repeat(3, 1fr); }
+  .current-card { padding: 23px; }
+}
+@media (max-width: 420px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .search { flex-direction: column; }
+  .search button { min-height: 48px; }
+  .forecast { grid-template-columns: repeat(2, 1fr); }
+}
